@@ -132,4 +132,93 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover { box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 50px; }
+            .img-mask { width: 100%; border-radius: 50px; height: 350px; border-left: none; border-top: 4px solid var(--primary); }
+            header { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SERGI<span>LOPEZ</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h4>Hola, soy</h4>
+            <h1>Sergi Lopez</h1>
+            <p>Desarrollador enfocado en crear soluciones digitales modernas, seguras y eficientes. Especialista en transformar ideas en código de alto impacto.</p>
+            <a href="#contact" class="contact-btn" style="margin-top:0">Hablemos</a>
+        </div>
+        <div class="hero-image">
+            <div class="img-mask">
+                <img src="https://via.placeholder.com/500x700/161633/ffffff?text=Sergi+Lopez" alt="Sergi Lopez">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Mis <span>Habilidades</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card"><h3>HTML/CSS</h3></div>
+            <div class="skill-card"><h3>JavaScript</h3></div>
+            <div class="skill-card"><h3>React</h3></div>
+            <div class="skill-card"><h3>Python</h3></div>
+            <div class="skill-card"><h3>Ciberseguridad</h3></div>
+            <div class="skill-card"><h3>Git/GitHub</h3></div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Proyectos <span>Destacados</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Sistema de Gestión</h3>
+                    <p>Una aplicación web completa para el control de inventarios y usuarios.</p>
+                    <a href="#" class="project-link">Ver Proyecto →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>App de Seguridad</h3>
+                    <p>Herramienta para el análisis de vulnerabilidades en redes locales.</p>
+                    <a href="#" class="project-link">Ver Proyecto →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">¿Tienes un <span>Proyecto?</span></h2>
+        <div class="contact-container">
+            <p>Estoy disponible para nuevos retos y colaboraciones. Si buscas a alguien comprometido con la calidad técnica, escríbeme.</p>
+            <a href="mailto:tu-email@ejemplo.com" class="contact-btn">Enviar Email</a>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2024 Sergi Lopez - Diseñado para GitHub Pages
+    </footer>
+
+</body>
+</html>
