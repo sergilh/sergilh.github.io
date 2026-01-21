@@ -1,11 +1,5 @@
 const red = [ 
   {
-    title: "Google Cybersecurity Labs",
-    description: "Laboratorios y actividades de redacción profesional documentadas relacionadas con la ciberseguridad.",
-    tags: ["Alerts", "Reports", "Linux","SQL"],
-    github: "https://github.com/sergilh/sergilh.github.io/tree/ab25f545e0e36ea8f387de03f0c45dc07b33e939/labs/Google%20Cybersecurity", 
-  },
-  {
     title: "🔐 Challenge Final – File Upload & Node.js RCE",
     description: "Objetivo: Comprometer la máquina objetivo obteniendo una shell y localizar la flag final",
     tags: ["Node.js", "RCE", "FileUpload"],
