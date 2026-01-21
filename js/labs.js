@@ -6,22 +6,22 @@ const labs = [
     github: "https://github.com/sergilh/sergilh.github.io/tree/ab25f545e0e36ea8f387de03f0c45dc07b33e939/labs/Google%20Cybersecurity", 
   },
   {
-    title: "Proyecto Académico - Configuración del Software Base en SO",
-    description: "Administración de usuarios, grupos y configuraciones del sistema en entornos Windows y Linux",
-    tags: ["Linux", "SysAdmin", "Users"],
-    github: "https://github.com/sergilh/sergilh.github.io/tree/f2a7f31a34a4c3f566cda9bad6f33038412bd3fb/projects/2-Configuraci%C3%B3n-SO-UOC",
+    title: "🔐 Challenge Final – File Upload & Node.js RCE",
+    description: "Objetivo: Comprometer la máquina objetivo obteniendo una shell y localizar la flag final",
+    tags: ["Node.js", "RCE", "FileUpload"],
+    github: "https://github.com/sergilh/sergilh.github.io/blob/2129b1f79ba2a8a53d4d13e1ee446f68413d7ea7/labs/redteam/1-%20FileUpload%20Node.js%20-%20RCE.txt",
   },
   {
-    title: "Proyecto Académico - Servicios, Procesos, Conexión a Red y Optimización del Sistema Operativo",
-    description: "Análisis, gestión y optimización de los procesos y servicios del sistema operativo y configuración correcta de la conectividad de red entre máquinas virtuales",
-    tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
-    github: "https://github.com/sergilh/sergilh.github.io/tree/46f24ce45486b1fb6f85d2a7c4eee3996ff23748/projects/3-Optimizaci%C3%B3n-SO-UOC", 
+    title: "Pickle Rick - CI PrivEsc",
+    description: "Objetivo: Ayudar a Rick obteniendo los tres ingredientes ocultos en el sistema.",
+    tags: ["Enum", "Command Injection", "PrivEsc"],
+    github: "https://github.com/sergilh/sergilh.github.io/blob/2129b1f79ba2a8a53d4d13e1ee446f68413d7ea7/labs/redteam/2-%20Pickle%20Rick%20-%20CI%20PrivEsc.txt", 
   },
   {
-    title: "Proyecto Académico - Gestión de Archivos y Almacenamiento",
-    description: "Comprensión del funcionamiento de los sistemas de archivos, las particiones, y los métodos de gestión de almacenamiento en diferentes sistemas operativos",
-    tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
-    github: "https://github.com/sergilh/sergilh.github.io/tree/46f24ce45486b1fb6f85d2a7c4eee3996ff23748/projects/4-Gesti%C3%B3n-Archivos-Almacen.-UOC", 
+    title: "Rabbit Store – JWT Abuse, SSTI & Privilege Escalation",
+    description: "Objetivo: Comprometer la máquina y obtener acceso root.",
+    tags: ["JWT", "SSTI", "PrivEsc"],
+    github: "https://github.com/sergilh/sergilh.github.io/blob/2129b1f79ba2a8a53d4d13e1ee446f68413d7ea7/labs/redteam/3-%20Rabbit%20Store%20-%20JWT%20PrivEsc", 
   }
 ];
 
