@@ -30,7 +30,6 @@ projects.forEach(p => {
 
     <div class="links">
       ${p.github ? `<a href="${p.github}" target="_blank">GitHub</a>` : ""}
-      ${p.writeup ? `<a href="${p.writeup}">Writeup</a>` : ""}
     </div>
   `;
 
