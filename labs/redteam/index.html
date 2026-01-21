@@ -86,13 +86,13 @@
     }
 
     /* --- GRID --- */
-    .labs-grid {
+    .red-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
-    .labs-card {
+    .red-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       padding: 2rem;
@@ -101,18 +101,18 @@
       backdrop-filter: blur(5px);
     }
 
-    .labs-card:hover {
+    .red-card:hover {
       transform: translateY(-8px);
       border-color: var(--primary);
       box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.25);
     }
 
-    .labs-card h3 {
+    .red-card h3 {
       font-size: 1.4rem;
       margin-bottom: 1rem;
     }
 
-    .labs-card p {
+    .red-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-bottom: 1.5rem;
@@ -175,7 +175,7 @@
     <h2>Red Team</h2>
   </div>
 
-  <div id="labs-container" class="labs-grid">
+  <div id="red-container" class="red-grid">
     <!-- JS renderiza aquí -->
   </div>
 </main>
@@ -184,6 +184,6 @@
   &copy; 2026 Sergi López
 </footer>
 
-<script src="../js/labs.js"></script>
+<script src="../js/redteam.js"></script>
 </body>
 </html>
