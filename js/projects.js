@@ -22,7 +22,7 @@ const projects = [
     description: "Comprensión del funcionamiento de los sistemas de archivos, las particiones, y los métodos de gestión de almacenamiento en diferentes sistemas operativos",
     tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
     github: "https://github.com/sergilh/sergilh.github.io/tree/46f24ce45486b1fb6f85d2a7c4eee3996ff23748/projects/4-Gesti%C3%B3n-Archivos-Almacen.-UOC", 
-  },
+  }
 ];
 
 const container = document.getElementById("projects-container");
