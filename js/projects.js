@@ -1,8 +1,8 @@
 const projects = [
   {
-    title: "Active Directory Lab",
-    description: "Explotación de un entorno AD vulnerable con enumeración, abuso de Kerberos y escalada de privilegios.",
-    tags: ["Windows", "AD", "Pentesting"],
+    title: "Proyecto Académico sobre virtualización y gestión de SO",
+    description: "Instalación, configuración y administración de diferentes sistemas operativos dentro de entornos virtualizados.",
+    tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
     github: "https://github.com/sergilh/ad-lab",
     writeup: "#"
   },
