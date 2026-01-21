@@ -1,0 +1,36 @@
+🧪 Pickle Rick – Command Injection & Privilege Escalation
+Objetivo:
+ Ayudar a Rick obteniendo los tres ingredientes ocultos en el sistema.
+Enumeración:
+ Asigné el dominio picklerick.thm en /etc/hosts. Al acceder a la web, Rick dejaba mensajes indicando que necesitaba ayuda para recuperar los ingredientes.
+Inspeccionando el código HTML encontré un comentario con el usuario:
+R1ckRul3s
+
+Realicé enumeración de directorios con Gobuster (inicialmente olvidé usar -x php,txt, lo que retrasó el proceso). Una vez corregido, encontré acceso a:
+/robots.txt → contenía Wubbalubbadubdub
+
+
+/login
+
+
+/portal.html
+
+
+Probé las credenciales encontradas y conseguí acceso al portal.
+Command Injection:
+ Dentro del portal había un input llamado commands, el cual ejecutaba comandos directamente en el sistema. Probé comandos básicos como:
+whoami
+pwd
+ls
+
+Ingredientes:
+Primer ingrediente: ubicado en el directorio actual. No podía leerse con cat, así que utilicé less.
+
+
+Segundo ingrediente: localizado en /home/rick. El nombre del archivo contenía espacios, por lo que utilicé nl para leerlo.
+
+
+Tercer ingrediente: dentro del directorio /root. Al ejecutar sudo -l, comprobé que el usuario tenía permisos totales. Usando sudo ls pude listar el contenido y obtener el último ingrediente.
+
+
+Con esto finalicé el reto.
