@@ -6,11 +6,10 @@ const projects = [
     github: "https://github.com/sergilh/sergilh.github.io/tree/9b392d16b11258654e9fa3316991c327a800e87c/projects/1-Virtualizaci%C3%B3n-SO-UOC", 
   },
   {
-    title: "Recon Script",
-    description: "Script en Bash para automatizar escaneo inicial y enumeración de servicios.",
-    tags: ["Linux", "Bash", "Recon"],
-    github: "https://github.com/sergilh/recon-script",
-    writeup: null
+    title: "Proyecto académico - Configuración del Software Base en SO",
+    description: "Administración de usuarios, grupos y configuraciones del sistema en entornos Windows y Linux",
+    tags: ["Linux", "SysAdmin", "Users"],
+    github: "https://github.com/sergilh/sergilh.github.io/tree/f2a7f31a34a4c3f566cda9bad6f33038412bd3fb/projects/2-Configuraci%C3%B3n-SO-UOC",
   }
 ];
 
