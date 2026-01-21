@@ -1,4 +1,4 @@
-const labs = [
+const labs = [ 
   {
     title: "Google Cybersecurity Labs",
     description: "Laboratorios y actividades de redacción profesional documentadas relacionadas con la ciberseguridad.",
