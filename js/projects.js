@@ -3,7 +3,7 @@ const projects = [
     title: "Proyecto Académico sobre virtualización y gestión de SO",
     description: "Instalación, configuración y administración de diferentes sistemas operativos dentro de entornos virtualizados.",
     tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
-    github: "https://github.com/sergilh/ad-lab",
+    github: "https://github.com/sergilh/sergilh.github.io/tree/9b392d16b11258654e9fa3316991c327a800e87c/projects/1-Virtualizaci%C3%B3n-SO-UOC",
     writeup: "#"
   },
   {
