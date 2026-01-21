@@ -1,1 +1,188 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sergi López | Labs</title>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(30, 41, 59, 0.5);
+      --primary: #6366f1;
+      --secondary: #06b6d4;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.1) 0%, transparent 25%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    html,body{
+      height:100%;
+    }
+
+    /* --- HEADER --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 10%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .logo span { color: var(--primary); }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-left: 2rem;
+    }
+    nav a:hover { color: var(--primary); }
+
+    /* --- MAIN --- */
+    main {
+      padding: 160px 10% 100px;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+    .section-header p {
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.5rem;
+    }
+    .section-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    /* --- GRID --- */
+    .blue-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .blue-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 24px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .blue-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.25);
+    }
+
+    .blue-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .blue-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .tags span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      background: rgba(255,255,255,0.05);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: var(--secondary);
+    }
+
+    .links a {
+      font-size: 0.85rem;
+      color: var(--primary);
+      text-decoration: none;
+      margin-right: 1.5rem;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SERGI<span>LÓPEZ</span></div>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="../projects/index.html">Proyectos</a>
+    
+  </nav>
+</header>
+
+<main>
+  <div class="section-header">
+    <p>// Ciberseguridad</p>
+    <h1>Cybersecurity Labs</h1>
+    <h2><a href="blueteam/index.html">Blue Team</a></h2>
+  </div>
+
+  <div id="blue-container" class="blue-grid">
+    <!-- JS renderiza aquí -->
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Sergi López
+</footer>
+
+<script src="../../js/blueteam.js"></script>
+</body>
+</html>
