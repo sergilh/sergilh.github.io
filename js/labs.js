@@ -1,9 +1,9 @@
 const labs = [
   {
-    title: "Proyecto Académico - Virtualización y gestión de SO",
-    description: "Instalación, configuración y administración de diferentes sistemas operativos dentro de entornos virtualizados.",
-    tags: ["Windows", "Ubuntu", "Linux","VirtualBox"],
-    github: "https://github.com/sergilh/sergilh.github.io/tree/9b392d16b11258654e9fa3316991c327a800e87c/projects/1-Virtualizaci%C3%B3n-SO-UOC", 
+    title: "Google Cybersecurity Labs",
+    description: "Laboratorios y actividades de redacción profesional documentadas relacionadas con la ciberseguridad.",
+    tags: ["Alerts", "Reports", "Linux","SQL"],
+    github: "https://github.com/sergilh/sergilh.github.io/tree/ab25f545e0e36ea8f387de03f0c45dc07b33e939/labs/Google%20Cybersecurity", 
   },
   {
     title: "Proyecto Académico - Configuración del Software Base en SO",
