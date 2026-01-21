@@ -27,20 +27,20 @@ const labs = [
 
 const container = document.getElementById("labs-container");
 
-projects.forEach(p => {
+labs.forEach(l => {
   const card = document.createElement("article");
   card.className = "labs-card";
 
   card.innerHTML = `
-    <h3>${p.title}</h3>
-    <p>${p.description}</p>
+    <h3>${l.title}</h3>
+    <p>${l.description}</p>
 
     <div class="tags">
-      ${p.tags.map(tag => `<span>${tag}</span>`).join("")}
+      ${l.tags.map(tag => `<span>${tag}</span>`).join("")}
     </div>
 
     <div class="links">
-      ${p.github ? `<a href="${p.github}" target="_blank">GitHub</a>` : ""}
+      ${l.github ? `<a href="${l.github}" target="_blank">GitHub</a>` : ""}
     </div>
   `;
 
