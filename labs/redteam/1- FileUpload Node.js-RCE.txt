@@ -1,0 +1,60 @@
+🔐 Challenge Final – File Upload & Node.js RCE
+Objetivo:
+ Comprometer la máquina objetivo obteniendo una shell y localizar la flag final.
+Enumeración inicial:
+ El dominio proporcionado era jewel.upload vulns.thm. Al acceder a la web se mostraba un formulario de subida de archivos. Inspeccionando el código fuente observé que el filtrado de archivos se realizaba desde el lado del cliente, concretamente en un archivo JavaScript (upload.js).
+Bypass de filtros:
+ Usé Burp Suite para interceptar las peticiones, pero inicialmente no se mostraban los archivos .js. Para solucionarlo, ajusté la configuración del interceptor eliminando la extensión .js del filtrado. Además, la caché del navegador impedía modificar la respuesta del script, por lo que tuve que eliminar manualmente las cabeceras de caché desde la request.
+Una vez modificado el script, eliminé el filtrado de extensiones.
+Enumeración de directorios:
+ Antes de subir la shell realicé un escaneo con Gobuster usando el wordlist proporcionado por el ejercicio. Aparecieron rutas como:
+/admin
+
+
+/content
+
+
+Al enumerar /admin, observé mediante el header X-Powered-By que la aplicación utilizaba Node.js, lo que indicaba que la shell debía estar adaptada a este entorno.
+Obtención de shell:
+ Creé una shell en Node.js (shell.js) y la renombré a shell.js.jpg, ya que el sistema solo permitía archivos JPG. Tras desactivar el interceptor y subir el archivo, no era posible ejecutarlo directamente desde la barra de direcciones, ya que el panel de administración solo ejecutaba módulos específicos.
+Las rutas /modules y /content se encontraban en el mismo nivel, por lo que utilicé path traversal (../content/archivo.jpg) para acceder al archivo subido.
+Probando manualmente las imágenes detectadas por Gobuster dentro de /content, una de ellas devolvió un error que permitió ejecutar la shell y obtener acceso a la terminal.
+Flag:
+ Desde la shell navegué hasta /var/www/ donde encontré el archivo FLAG.TXT, completando el desafío.
+
+🧪 Pickle Rick – Command Injection & Privilege Escalation
+Objetivo:
+ Ayudar a Rick obteniendo los tres ingredientes ocultos en el sistema.
+Enumeración:
+ Asigné el dominio picklerick.thm en /etc/hosts. Al acceder a la web, Rick dejaba mensajes indicando que necesitaba ayuda para recuperar los ingredientes.
+Inspeccionando el código HTML encontré un comentario con el usuario:
+R1ckRul3s
+
+Realicé enumeración de directorios con Gobuster (inicialmente olvidé usar -x php,txt, lo que retrasó el proceso). Una vez corregido, encontré acceso a:
+/robots.txt → contenía Wubbalubbadubdub
+
+
+/login
+
+
+/portal.html
+
+
+Probé las credenciales encontradas y conseguí acceso al portal.
+Command Injection:
+ Dentro del portal había un input llamado commands, el cual ejecutaba comandos directamente en el sistema. Probé comandos básicos como:
+whoami
+pwd
+ls
+
+Ingredientes:
+Primer ingrediente: ubicado en el directorio actual. No podía leerse con cat, así que utilicé less.
+
+
+Segundo ingrediente: localizado en /home/rick. El nombre del archivo contenía espacios, por lo que utilicé nl para leerlo.
+
+
+Tercer ingrediente: dentro del directorio /root. Al ejecutar sudo -l, comprobé que el usuario tenía permisos totales. Usando sudo ls pude listar el contenido y obtener el último ingrediente.
+
+
+Con esto finalicé el reto.
