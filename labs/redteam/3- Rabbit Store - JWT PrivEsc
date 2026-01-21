@@ -1,0 +1,37 @@
+🐰 Rabbit Store – JWT Abuse, SSTI & Privilege Escalation
+Objetivo:
+ Comprometer la máquina y obtener acceso root.
+Enumeración:
+ Realicé escaneo con Nmap y configuré los dominios:
+cloudsite.thm
+
+
+storage.cloudsite.thm
+
+
+Tras registrarme como usuario normal, el acceso estaba muy limitado.
+JWT Manipulation:
+ Intercepté la petición de login con Burp Suite y analicé el JWT. Al decodificarlo, encontré el campo:
+subscription: inactive
+
+Intenté modificarlo sin éxito en el login, pero al interceptar la petición de registro, añadí:
+subscription: active
+
+Esto me permitió crear un usuario con acceso al dashboard activo.
+File Upload & SSRF:
+ El panel permitía subir archivos. Subí una shell.php y el sistema confirmó la subida, pero al acceder a la ruta devolvía un error JSON indicando que el archivo no existía.
+Enumeré /api con Gobuster y encontré múltiples rutas restringidas. Probé subir archivos desde una fuente externa usando:
+python3 -m http.server 8000
+
+El servidor permitía leer archivos internos, como index.html.
+API Abuse & SSTI:
+ Detecté que la aplicación usaba Express.js en el puerto 3000. Accedí a:
+http://localhost:3000/api/docs
+
+Dentro encontré el endpoint:
+/api/fetch_messages_from_chatbot
+
+Cambié la petición de GET a POST, ajusté las cabeceras y obtuve un error indicando que faltaba el parámetro username. Aproveché esto para explotar una Server-Side Template Injection, lo que me permitió ejecutar comandos y obtener una shell.
+Escalada de privilegios:
+ Encontré user.txt y una Erlang cookie en /var/lib/rabbit. Usando Metasploit obtuve acceso al sistema RabbitMQ. Tras modificar permisos y exportar definiciones, conseguí un archivo JSON con hashes de usuarios.
+Decodificando la contraseña del usuario root (Base64 → hex), logré escalar privilegios y acceder a root.txt.
